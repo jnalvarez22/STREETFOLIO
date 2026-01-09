@@ -231,14 +231,7 @@ body::before {
     box-shadow: 0 0 20px rgba(255, 16, 240, 0.3);
 }
 
-/* ABOUT */
-.section-about {
-    padding: 6rem 0;
-    background: var(--color-surface);
-    border-top: 1px solid rgba(0, 255, 65, 0.1);
-    border-bottom: 1px solid rgba(0, 255, 65, 0.1);
-}
-
+/* Section title styles (used across sections) */
 .section-title {
     font-family: var(--font-display);
     font-size: clamp(2rem, 5vw, 4rem);
@@ -247,27 +240,6 @@ body::before {
     letter-spacing: 0.1em;
     margin-bottom: 2rem;
 }
-
-.about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 4rem; }
-.about-text { font-size: 1.1rem; color: var(--color-text); line-height: 1.8; }
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
-}
-
-.skill-card {
-    background: var(--color-bg);
-    border: 1px solid rgba(0, 255, 65, 0.2);
-    padding: 2rem 1rem;
-    text-align: center;
-    position: relative;
-}
-
-.skill-icon { font-size: 2rem; margin-bottom: 1rem; color: var(--color-neon-green); }
-.skill-name { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
 
 /* PROJECTS */
 .section-projects { padding: 6rem 0; background: var(--color-bg); }
@@ -346,7 +318,7 @@ footer p { color: var(--color-text-muted); font-size: 0.85rem; margin: 0; text-t
     .hero-cta { flex-direction: column; }
     .btn-neon, .btn-outline { width: 100%; text-align: center; }
     .project-card { min-width: 90vw; }
-    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    
 }
 
 @media (prefers-reduced-motion: reduce) {
