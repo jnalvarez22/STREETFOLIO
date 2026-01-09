@@ -9,7 +9,7 @@ Cómo ver
 - Desde github pages con el link adjuntado.
 
 Contacto
-- hello@creative.com
+- juanalvarez@alumnos.udit.es
 
 Tecnologías
 - HTML, CSS, JavaScript, Bootstrap, GSAP
