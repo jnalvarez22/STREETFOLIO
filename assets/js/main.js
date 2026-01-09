@@ -129,5 +129,28 @@ window.addEventListener('load', () => {
     initScrollReveals();
     initProjectsScroll();
     initNavbar();
+    initHeroVideo();
     ScrollTrigger.refresh();
 });
+
+function initHeroVideo(){
+    const video = document.querySelector('.hero-video');
+    if(!video) return;
+    // If user prefers reduced motion, pause video to avoid autoplaying motion
+    if(prefersReducedMotion){
+        try{
+            video.pause();
+            video.removeAttribute('autoplay');
+        }catch(e){}
+        return;
+    }
+
+    // Ensure video will attempt to play (muted autoplay should work in most browsers)
+    const playPromise = video.play();
+    if(playPromise !== undefined){
+        playPromise.catch(() => {
+            // autoplay failed — keep muted, rely on poster/gradient overlay
+            video.muted = true;
+        });
+    }
+}
