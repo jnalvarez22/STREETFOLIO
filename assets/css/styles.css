@@ -1,8 +1,7 @@
 :root {
     --color-bg: #0a0a0a;
     --color-surface: #151515;
-    --color-neon-green: #00FF41;
-    --color-neon-magenta: #FF10F0;
+    --color-neon-green: #00FF41;    
     --color-text: #e0e0e0;
     --color-text-muted: #6b6b6b;
     
@@ -177,6 +176,19 @@ body::before {
     margin-bottom: 1.5rem;
 }
 
+/* Character-level animation helpers for hero title */
+.hero-title {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hero-title .char {
+    display: inline-block;
+    line-height: 1;
+    will-change: transform, opacity;
+}
+
 .hero-subtitle {
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     color: var(--color-text);
@@ -247,6 +259,12 @@ body::before {
 .projects-container { overflow-x: hidden; margin-top: 3rem; }
 .projects-wrapper { display: flex; gap: 3rem; padding: 6rem 0; }
 
+/* Force a 16:9 aspect ratio for project images to match Unsplash crop */
+.project-image {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
 .project-card {
     min-width: 80vw;
     background: var(--color-surface);
@@ -283,7 +301,7 @@ body::before {
 
 .project-card:hover .project-overlay { opacity: 1; }
 
-.project-title { font-family: var(--font-display); font-size: 2rem; color: var(--color-neon-green); margin-bottom: 0.5rem; text-transform: uppercase; }
+.project-title { font-family: var(--font-display); font-size: 2rem; color: var(--color-neon-green); margin-bottom: 0.5rem; }
 .project-desc { font-size: 1rem; color: var(--color-text-muted); margin-bottom: 1rem; }
 .project-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 .tag {

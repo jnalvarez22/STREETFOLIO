@@ -6,12 +6,43 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 
 function initHero() {
     if (prefersReducedMotion) return;
-    gsap.from('.hero .reveal', {
+    gsap.from('.hero .reveal:not(.hero-title)', {
         y: 80,
         opacity: 0,
         duration: 1,
         stagger: 0.15,
         ease: 'power3.out'
+    });
+}
+
+function initHeroTextAnimation() {
+    if (prefersReducedMotion) return;
+    const el = document.querySelector('.hero-title');
+    if (!el) return;
+
+    const text = el.textContent || '';
+    el.innerHTML = '';
+    const fragment = document.createDocumentFragment();
+    text.split('').forEach((char) => {
+        const span = document.createElement('span');
+        span.className = 'char';
+        span.textContent = char === ' ' ? '\u00A0' : char;
+        fragment.appendChild(span);
+    });
+    el.appendChild(fragment);
+
+    gsap.fromTo('.hero-title .char', {
+        y: '100%',
+        rotationX: -90,
+        opacity: 0,
+        transformOrigin: '50% 50%'
+    }, {
+        y: '0%',
+        rotationX: 0,
+        opacity: 1,
+        duration: 0.9,
+        ease: 'back.out(1.4)',
+        stagger: 0.03
     });
 }
 
@@ -94,6 +125,7 @@ function initNavbar() {
 
 window.addEventListener('load', () => {
     initHero();
+    initHeroTextAnimation();
     initScrollReveals();
     initProjectsScroll();
     initNavbar();
