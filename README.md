@@ -15,4 +15,4 @@ Tecnologías
 - HTML, CSS, JavaScript, Bootstrap, GSAP
 
 Notas
-- Trabajo preparado como proyecto académico y como plantilla de portfolio usable para diseñadorese.
+- Trabajo preparado como proyecto académico y como plantilla de portfolio usable para diseñadores.
